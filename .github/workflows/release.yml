@@ -1,0 +1,55 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'  # Push events matching v1.0, v20.15.10, etc.
+
+jobs:
+  build:
+    name: Create Release
+    runs-on: macos-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Set up Xcode
+      uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: latest-stable
+    
+    - name: Build and Package
+      run: |
+        # Install dependencies
+        xcode-select --install || true
+        
+        # Build the project
+        xcodebuild \
+          -scheme FinderContextualUtilities \
+          -configuration Release \
+          -derivedDataPath build \
+          build
+        
+        # Create dist directory
+        mkdir -p dist
+        
+        # Copy the app bundle
+        cp -R "build/Build/Products/Release/FinderContextualUtilities.app" dist/
+        
+        # Create zip
+        (cd dist && zip -r FinderContextualUtilities.app.zip FinderContextualUtilities.app)
+        
+        # Get version from tag
+        VERSION=${GITHUB_REF#refs/tags/v}
+        
+        # Rename zip to include version
+        mv dist/FinderContextualUtilities.app.zip dist/FinderContextualUtilities-v${VERSION}.app.zip
+    
+    - name: Create Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          dist/FinderContextualUtilities-v*.app.zip
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
