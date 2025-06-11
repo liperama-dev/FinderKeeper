@@ -8,8 +8,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if !finderSync.isExtensionEnabled {
             // The extension is not enabled, show instructions
             let alert = NSAlert()
-            alert.messageText = "Enable FinderContextualUtilities in System Preferences"
-            alert.informativeText = "Please enable the FinderContextualUtilities extension in System Preferences > Extensions > Finder Extensions"
+            alert.messageText = "Enable FinderKeeper in System Preferences"
+            alert.informativeText = "Please enable the FinderKeeper extension in System Preferences > Extensions > Finder Extensions"
             alert.addButton(withTitle: "Open System Preferences")
             alert.addButton(withTitle: "Quit")
             

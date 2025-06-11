@@ -1,14 +1,14 @@
 import Cocoa
 import FinderSync
 
-class FinderContextualUtilities: FIFinderSync {
+class FinderKeeper: FIFinderSync {
     
     var myFolderURL = URL(fileURLWithPath: "/")
     
     override init() {
         super.init()
         
-        NSLog("FinderContextualUtilitiesFinderSync() launched from %@", Bundle.main.bundlePath as NSString)
+        NSLog("FinderKeeper launched from %@", Bundle.main.bundlePath as NSString)
         
         // Set up the directory we are syncing
         FIFinderSyncController.default().directoryURLs = [self.myFolderURL]

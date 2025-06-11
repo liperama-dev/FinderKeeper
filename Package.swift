@@ -2,20 +2,20 @@
 import PackageDescription
 
 let package = Package(
-    name: "FinderContextualUtilities",
-    platforms: [.macOS(.v10_13)],
+    name: "FinderKeeper",
+    platforms: [.macOS(.v10_15)],
     products: [
-        .executable(
-            name: "FinderContextualUtilities",
-            targets: ["FinderContextualUtilities"]
+        .library(
+            name: "FinderKeeper",
+            targets: ["FinderKeeper"]
         ),
     ],
     dependencies: [],
     targets: [
-        .executableTarget(
-            name: "FinderContextualUtilities",
+        .target(
+            name: "FinderKeeper",
             dependencies: [],
-            path: "FinderContextualUtilities"
+            path: "FinderKeeper"
         ),
     ]
 )

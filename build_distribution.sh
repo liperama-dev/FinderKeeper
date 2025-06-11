@@ -4,7 +4,7 @@
 set -e
 
 # Configuration
-PRODUCT_NAME="FinderContextualUtilities"
+PRODUCT_NAME="FinderKeeper"
 BUILD_DIR="build/Release"
 DIST_DIR="dist"
 APP_PATH="$DIST_DIR/$PRODUCT_NAME.app"

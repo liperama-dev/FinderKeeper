@@ -1,4 +1,4 @@
-# FinderContextualUtilities
+# FinderKeeper
 
 Enhance Finder's right-click menu with actions that should have been there from the start.
 
@@ -26,9 +26,9 @@ Enhance Finder's right-click menu with actions that should have been there from 
 
 ### Using Pre-built Application
 
-1. Download the latest `FinderContextualUtilities.app.zip` from the [Releases](https://github.com/liperama-dev/finder-contextual-utilities/releases) page
+1. Download the latest `FinderKeeper.app.zip` from the [Releases](https://github.com/liperama-dev/finder-contextual-utilities/releases) page
 2. Extract the zip file
-3. Move `FinderContextualUtilities.app` to your `/Applications` folder
+3. Move `FinderKeeper.app` to your `/Applications` folder
 4. Run the app once to install the extension
 5. Enable the extension in System Preferences > Extensions > Finder Extensions
 6. Grant Full Disk Access in System Preferences > Security & Privacy > Privacy > Full Disk Access
@@ -50,7 +50,7 @@ Enhance Finder's right-click menu with actions that should have been there from 
 
 2. Open the project in Xcode:
    ```bash
-   open "finder-contextual-utilities/FinderContextualUtilities.xcodeproj"
+   open "finder-contextual-utilities/FinderKeeper.xcodeproj"
    ```
 
 3. Build and run the project (⌘R) to install the extension
@@ -64,8 +64,8 @@ To create a distributable .app bundle:
 ```
 
 This will create a `dist` directory containing:
-- `FinderContextualUtilities.app` - The application bundle
-- `FinderContextualUtilities.zip` - A zip file suitable for distribution
+- `FinderKeeper.app` - The application bundle
+- `FinderKeeper.zip` - A zip file suitable for distribution
 
 ## Requirements
 
